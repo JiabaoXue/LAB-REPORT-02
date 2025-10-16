@@ -1,0 +1,66 @@
+/* 
+
+ The goal of this program is to make the buttonState value to 1 when PB is not pressed and its value to 0 when the PB is pressed while using the internal resistor in the Arduino (Input pullup). 
+
+The main theme is: Digital Input 
+
+*/ 
+
+ 
+
+// digital pin 2 has a pushbutton attached to it. Give it a name: (replace pin 2 for pushButton) 
+
+int pushButton = 2; 
+
+ 
+ 
+
+// the setup routine runs once when you press reset: 
+
+void setup() { 
+
+  // initialize serial communication at 9600 bits per second: 
+
+  Serial.begin(9600); 
+
+  // make the pushbutton's pin an input: (tellin pin 2 as an INPUT) 
+
+pinMode(pushButton, INPUT_PULLUP); 
+
+//INTPUT_PULLUP = internal resistor so we don't need an external resistor. The internal resistor is 20K ohms. 
+
+} 
+
+ 
+ 
+
+// the loop routine runs over and over again forever:  
+
+void loop() { 
+
+  // read the input pin: (DigitalRead = Digital INPUT) 
+
+  int buttonState = digitalRead(pushButton); 
+
+  // print out the state of the button 
+
+  Serial.print("buttonState = "); 
+
+  Serial.print(buttonState); 
+
+  // tab (\t) = 4 spaces 
+
+ Serial.print("\t"); 
+
+  Serial.print("pushButton = "); 
+
+  Serial.println(pushButton); 
+
+ 
+ 
+
+  delay(1);   
+
+// delay in between reads for stability 
+
+} 
