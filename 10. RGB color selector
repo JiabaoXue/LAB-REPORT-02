@@ -1,0 +1,47 @@
+/* 
+
+ The goal of this program is to change the color of the RGB by changing its value which is X in the code. 
+
+The main theme is: Analog Input  
+
+*/ 
+
+ 
+
+// digital pin 2 has a pushbutton attached to it. Give it a name: (replace pin 2 for pushButton) 
+
+int r = 11; 
+
+int g = 12; 
+
+int b = 13; 
+
+ 
+
+// the setup routine runs once when you press reset: 
+
+void setup() { 
+
+ } 
+
+ 
+
+// the loop routine runs over and over again forever:  
+
+void loop() { 
+
+  analogWrite(r,X);  
+
+  analogWrite(g,X);  
+
+  analogWrite(b,X);  
+
+  // X as in the bit value of that color 
+
+ 
+
+  delay(1);  // delay in between reads for stability 
+
+} 
+
+ 
