@@ -1,0 +1,107 @@
+/* 
+
+The goal of this program is to make 4 LEDS mimic a running aspect where one LED is on after the other from top to the bottom endlessly 
+
+The main theme is: Digital Output 
+
+*/ 
+
+// the setup function runs once when you press reset or power the board 
+
+  int timeDelay = 10; 
+
+// this makes the value "timeDelay" always equal to 10ms 
+
+ 
+
+void setup() { 
+
+  //sets the pin 10,11,12 and 13 as outputs. 
+
+  pinMode(10, OUTPUT); 
+
+  pinMode(11, OUTPUT); 
+
+  pinMode(12, OUTPUT); 
+
+  pinMode(13, OUTPUT); 
+
+} 
+
+// the loop function runs over and over again forever 
+
+void loop() { 
+
+  digitalWrite(10, 1); 
+
+//this makes the first LED turn on and all of the others are off 
+
+// value=1 as in on and value=0 as in off 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 0);   
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);  
+
+// stops the program for a 10ms then restarts 
+
+  
+
+  digitalWrite(10, 0); 
+
+  digitalWrite(11, 1); 
+
+//this makes the second LED turn on and all of the others are off 
+
+// value=1 as in on and value=0 as in off 
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);  
+
+// stops the program for a 10ms then restarts 
+
+   
+
+  digitalWrite(10, 0); 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 1); 
+
+//this makes the third LED turn on and all of the others are off 
+
+// value=1 as in on and value=0 as in off    
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);  
+
+// stops the program for a 10ms then restarts 
+
+ 
+
+  digitalWrite(10, 0); 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,1); 
+
+//this makes the fourth LED turn on and all of the others are off 
+
+// value=1 as in on and value=0 as in off  
+
+  delay(timeDelay);  
+
+// stops the program for a 10ms then restarts 
+
+ 
+
+} 
