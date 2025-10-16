@@ -1,0 +1,169 @@
+/* 
+
+The main goal of this program is to use one RGB instead of 4 LEDs to create the same running effect. It starts with the colour white then red green and blue. 
+
+Goes in the sequence White, Red, Green, Blue, Blue, Green, Red, White. 
+
+The main theme is: Digital Output 
+
+*/ 
+
+  // the setup function runs once when you press reset or power the board 
+
+  int timeDelay = 10; 
+
+// this makes the value "timeDelay" always equal to 10ms 
+
+ 
+
+void setup() { 
+
+ //sets the pin 11,12 and 13 as outputs. 
+
+  pinMode(11, OUTPUT); 
+
+  pinMode(12, OUTPUT); 
+
+  pinMode(13, OUTPUT); 
+
+} 
+
+// the loop function runs over and over again forever 
+
+void loop() { 
+
+     
+
+  digitalWrite(11, 1);  
+
+  digitalWrite(12, 1);   
+
+  digitalWrite(13,1); 
+
+//this makes all of the LEDs on, making the LED white 
+
+// value=1 as in on and value=0 as in off  
+
+  delay(timeDelay);      
+
+// stops the program for a 10ms then restarts 
+
+                  
+
+  
+
+  digitalWrite(11, 1); 
+
+//this makes only pin 11 LED on and all of the others off, making the LED red because it only gives power to the red component 
+
+// value=1 as in on and value=0 as in off  
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);                       
+
+ // stops the program for a 10ms then restarts 
+
+ 
+
+ 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 1); 
+
+//this makes only pin 13 LED on and all of the others off, making the LED green because it only gives power to the green component 
+
+// value=1 as in on and value=0 as in off  
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);   
+
+// stops the program for a 10ms then restarts 
+
+ 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,1); 
+
+//this makes only pin 13 LED on and all of the others off, making the LED blue because it only gives power to the blue component 
+
+// value=1 as in on and value=0 as in off  
+
+  delay(timeDelay);   
+
+// stops the program for a 10ms then restarts 
+
+   
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,1); 
+
+//this makes only pin 13 LED on and all of the others off, making the LED blue because it only gives power to the blue component 
+
+// value=1 as in on and value=0 as in off  
+
+  delay(timeDelay);   
+
+// stops the program for a 10ms then restarts 
+
+ 
+
+  digitalWrite(11, 0); 
+
+  digitalWrite(12, 1); 
+
+//this makes only pin 13 LED on and all of the others off, making the LED green because it only gives power to the green component 
+
+// value=1 as in on and value=0 as in off  
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);   
+
+// stops the program for a 10ms then restarts 
+
+  
+
+  digitalWrite(11, 1); 
+
+//this makes only pin 11 LED on and all of the others off, making the LED red because it only gives power to the red component 
+
+// value=1 as in on and value=0 as in off  
+
+  digitalWrite(12, 0);    
+
+  digitalWrite(13,0); 
+
+  delay(timeDelay);                       
+
+ // stops the program for a 10ms then restarts 
+
+ 
+
+  digitalWrite(11, 1);  
+
+  digitalWrite(12, 1);   
+
+  digitalWrite(13,1); 
+
+//this makes all of the LEDs on, making the LED white 
+
+// value=1 as in on and value=0 as in off  
+
+  delay(timeDelay);      
+
+// stops the program for a 10ms then restarts 
+
+ 
+
+} 
