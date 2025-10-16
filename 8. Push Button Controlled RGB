@@ -1,0 +1,67 @@
+/* 
+
+ The goal of this program is to make the buttonState value to 1 when PB is not pressed and its value to 0 when the PB is pressed while using the internal resistor in the Arduino (Input pullup). When the value of buttonState is 1, all the components of the RGB should light up and make the RGB white. When the value of the buttonState is 0, the RGB should power off. 
+
+The main theme is: Digital Input 
+
+*/ 
+
+ 
+
+// digital pin 2 has a pushbutton attached to it. Give it a name: (replace pin 2 for pushButton) 
+
+int pushButton = 2; 
+
+ 
+
+// the setup routine runs once when you press reset: 
+
+void setup() { 
+
+  // initialize serial communication at 9600 bits per second: 
+
+  Serial.begin(9600); 
+
+  // make the pushbutton's pin an input: (telling pin 2 as an INPUT) 
+
+pinMode(pushButton, INPUT_PULLUP); 
+
+pinMode(13, OUTPUT);  
+
+pinMode(12, OUTPUT); 
+
+pinMode(11, OUTPUT); 
+
+ //sets the pin 11,12 and 13 as outputs. 
+
+//INTPUT_PULLUP = internal resistor so we don't need an external resistor. The internal resistor is 20K 
+
+} 
+
+ 
+ 
+
+// the loop routine runs over and over again forever:  
+
+void loop() { 
+
+  // read the input pin: (DigitalRead = Digital INPUT) 
+
+  int buttonState = digitalRead(pushButton); 
+
+  // print out the state of the button 
+
+  Serial.print(buttonState); 
+
+  digitalWrite(13,buttonState); 
+
+  digitalWrite(12,buttonState);  
+
+  digitalWrite(11,buttonState); 
+
+ 
+ 
+
+  delay(1);  // delay in between reads for stability 
+
+} 
