@@ -1,0 +1,76 @@
+/* 
+
+ The goal of this program is to make the buttonState value to 1 when PB is not pressed and its value to 0 when the PB is pressed while using the internal resistor in the Arduino (Input pullup). When PB is not pressed, Red and Green LEDs are on. When PB is pressed: Red and Blue LEDs are on.  
+
+The main theme is: Digital Input  
+
+*/ 
+
+ 
+
+// digital pin 2 has a pushbutton attached to it. Give it a name: (replace pin 2 for pushButton) 
+
+int pushButton = 2; 
+
+int red = 13; 
+
+int green = 12; 
+
+int blue = 11; 
+
+ 
+
+// the setup routine runs once when you press reset: 
+
+void setup() { 
+
+  // initialize serial communication at 9600 bits per second: 
+
+  Serial.begin(9600); 
+
+  // make the pushbutton's pin an input: (telling pin 2 as an INPUT) 
+
+pinMode(pushButton, INPUT_PULLUP); 
+
+pinMode(13, OUTPUT);  
+
+pinMode(12, OUTPUT); 
+
+pinMode(11, OUTPUT); 
+
+ //sets the pin 11,12 and 13 as outputs. 
+
+//INTPUT_PULLUP = internal resistor so we don't need an external resistor. The internal resistor is 20K 
+
+} 
+
+ 
+ 
+
+// the loop routine runs over and over again forever:  
+
+void loop() { 
+
+  // read the input pin: (DigitalRead = Digital INPUT) 
+
+  int buttonState = digitalRead(pushButton); 
+
+  // print out the state of the button 
+
+  Serial.print(buttonState); 
+
+  digitalWrite(red,1); 
+
+// red's value is 1 because the red LED is always on 
+
+  digitalWrite(green,buttonState);  
+
+  digitalWrite(blue,!buttonState); 
+
+  // using ! inverse the value of buttonState 
+
+ 
+
+  delay(1);  // delay in between reads for stability 
+
+} 
